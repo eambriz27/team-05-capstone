@@ -32,12 +32,13 @@ const height = Dimensions.get("window").height;
 
 const styles = StyleSheet.create({
   appName: {
+    fontFamily: "Goldman_400Regular",
     fontWeight: "bold",
     fontSize: height * 0.07,
     marginBottom: height * 0.43,
     marginTop: height * 0.07,
     textAlign: "center",
-    color: "#2596be",
+    color: "#00539a",
     marginHorizontal: width * 0.01,
   },
   backgroundImage: {
@@ -71,6 +72,7 @@ const styles = StyleSheet.create({
     marginHorizontal: width * 0.05,
   },
   text: {
+    fontFamily: "Goldman_400Regular",
     fontSize: 20,
     lineHeight: 27,
     fontWeight: "bold",

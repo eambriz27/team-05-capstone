@@ -3,6 +3,8 @@ import { Button, MD3LightTheme as DefaultTheme, Provider as PaperProvider } from
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import HomeScreen from "./screens/HomeScreen"
+import { useFonts, Goldman_400Regular, Goldman_700Bold } from '@expo-google-fonts/goldman';
+
 
 const theme = {
   ...DefaultTheme,
@@ -14,6 +16,10 @@ const theme = {
 };
 
 export default function App() {
+  let [fontsLoaded] = useFonts({
+    Goldman_400Regular,
+    Goldman_700Bold,
+  });
   return (
     <PaperProvider>
       <View style={styles.container}>
