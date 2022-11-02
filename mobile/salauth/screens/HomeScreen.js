@@ -1,7 +1,14 @@
-import React from "react";
+import { React } from "react";
 import {Dimensions, Image, Pressable, SafeAreaView, StyleSheet, Text, View} from "react-native";
+import { useFonts, Goldman_400Regular, Goldman_700Bold } from '@expo-google-fonts/goldman';
 
 function HomeScreen() {
+
+  let [fontsLoaded] = useFonts({
+    Goldman_400Regular,
+    Goldman_700Bold,
+  });
+
     return (
       <SafeAreaView style={styles.page}>
         <Image 
@@ -72,12 +79,11 @@ const styles = StyleSheet.create({
     marginHorizontal: width * 0.05,
   },
   text: {
-    fontFamily: "Goldman_400Regular",
     fontSize: 20,
     lineHeight: 27,
     fontWeight: "bold",
     letterSpacing: 0.25,
-    color: "#00539a",
+    color: "#FAF9F6",
   },
   page: {
     backgroundColor: "#FAF9F6",

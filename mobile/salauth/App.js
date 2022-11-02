@@ -16,10 +16,12 @@ const theme = {
 };
 
 export default function App() {
+
   let [fontsLoaded] = useFonts({
     Goldman_400Regular,
     Goldman_700Bold,
   });
+
   return (
     <PaperProvider>
       <View style={styles.container}>
