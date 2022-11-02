@@ -8,10 +8,9 @@ This is a React.js/Next.js based landing page to showcase Salauth's usage flow.
 Template followed and modified from <a href = "https://github.com/issaafalkattan/react-landing-page-template-2021">here</a>.
 ### Make it your own
 
-#### 1. Clone repo
+#### 1. Running locally
 
 ```
-git clone https://github.com/issaafalkattan/react-landing-page-template-2021.git
 cd react-landing-page-template-2021
 yarn
 ```
