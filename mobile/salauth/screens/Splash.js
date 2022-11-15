@@ -1,13 +1,15 @@
 import { React } from "react";
 import {Dimensions, Image, Pressable, SafeAreaView, StyleSheet, Text, View} from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useFonts, Goldman_400Regular, Goldman_700Bold } from '@expo-google-fonts/goldman';
 
-function HomeScreen() {
 
-  let [fontsLoaded] = useFonts({
-    Goldman_400Regular,
-    Goldman_700Bold,
-  });
+function Splash({navigation}) {
+
+  let fontsLoaded = async() => {
+    await useFonts({Goldman_400Regular, Goldman_700Bold});
+  };
 
     return (
       <SafeAreaView style={styles.page}>
@@ -20,12 +22,14 @@ function HomeScreen() {
         <View style={styles.parent}>
           <Pressable
             style={styles.signInbutton}
+            onPress={() => navigation.navigate("SignIn")}
           >
             <Text style={styles.text}>Sign In</Text>
           </Pressable>
   
           <Pressable
             style={styles.signUpbutton}
+            onPress={() => navigation.navigate("SignUp")}
           >
             <Text style={styles.text}>Sign Up</Text>
           </Pressable>
@@ -98,5 +102,5 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeScreen;
+export default Splash;
   
