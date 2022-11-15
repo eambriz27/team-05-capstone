@@ -1,5 +1,6 @@
 import { React } from "react";
 import {Dimensions, Image, Pressable, SafeAreaView, StyleSheet, Text, View} from "react-native";
+<<<<<<< HEAD:mobile/salauth/screens/HomeScreen.js
 import { useFonts, Goldman_400Regular, Goldman_700Bold } from '@expo-google-fonts/goldman';
 
 function HomeScreen() {
@@ -9,6 +10,19 @@ function HomeScreen() {
     Goldman_700Bold,
   });
 
+=======
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { useFonts, Goldman_400Regular, Goldman_700Bold } from '@expo-google-fonts/goldman';
+
+
+function Splash({navigation}) {
+
+  let fontsLoaded = async() => {
+    await useFonts({Goldman_400Regular, Goldman_700Bold});
+  };
+
+>>>>>>> 1990faf (nagivation, bottom navbar, and screen templates):mobile/salauth/screens/Splash.js
     return (
       <SafeAreaView style={styles.page}>
         <Image 
@@ -20,12 +34,14 @@ function HomeScreen() {
         <View style={styles.parent}>
           <Pressable
             style={styles.signInbutton}
+            onPress={() => navigation.navigate("SignIn")}
           >
             <Text style={styles.text}>Sign In</Text>
           </Pressable>
   
           <Pressable
             style={styles.signUpbutton}
+            onPress={() => navigation.navigate("SignUp")}
           >
             <Text style={styles.text}>Sign Up</Text>
           </Pressable>
@@ -98,5 +114,5 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeScreen;
+export default Splash;
   
