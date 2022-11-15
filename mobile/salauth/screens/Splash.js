@@ -1,4 +1,4 @@
-import React from "react";
+import { React } from "react";
 import {Dimensions, Image, Pressable, SafeAreaView, StyleSheet, Text, View} from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -83,12 +83,11 @@ const styles = StyleSheet.create({
     marginHorizontal: width * 0.05,
   },
   text: {
-    fontFamily: "Goldman_400Regular",
     fontSize: 20,
     lineHeight: 27,
     fontWeight: "bold",
     letterSpacing: 0.25,
-    color: "#00539a",
+    color: "#FAF9F6",
   },
   page: {
     backgroundColor: "#FAF9F6",
