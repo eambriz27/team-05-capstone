@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, Dimensions, Button, SafeAreaView, Text, StyleSheet, View, Pressable } from 'react-native';
+import { Image, Dimensions, Button, SafeAreaView, Text, StyleSheet, View, Pressable, TextInput } from 'react-native';
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useFonts, Goldman_400Regular, Goldman_700Bold } from '@expo-google-fonts/goldman';
@@ -14,8 +14,44 @@ function SignIn({ navigation }) {
         <SafeAreaView style={styles.page}>
             <Text style={styles.appName}>Salauth</Text>
             <Text style={styles.subheaderText}>Create an account</Text>
-            <View style={styles.parent}>
-                
+
+            <TextInput
+            style={styles.input}
+            placeholder="First Name"
+            keyboardType="default"
+            />
+
+            <TextInput
+            style={styles.input}
+            placeholder="Last Name"
+            keyboardType="default"
+            />
+
+            <TextInput
+            style={styles.input}
+            placeholder="Email"
+            keyboardType="email-address"
+            />
+
+            <TextInput
+            style={styles.input}
+            placeholder="Username"
+            keyboardType="default"
+            />
+
+            <TextInput
+            style={styles.input}
+            placeholder="Password"
+            keyboardType="visible-password"
+            />
+
+            <TextInput
+            style={styles.input}
+            placeholder="Confirm Password"
+            keyboardType="visible-password"
+            />
+
+            <View style={styles.parent}>    
                 <Pressable
                 style={styles.signInbutton}
                 onPress={() => navigation.navigate("Splash")}>
@@ -52,7 +88,7 @@ const styles = StyleSheet.create({
         fontWeight: "400",
         textAlign: "center",
         paddingTop: 5,
-        marginBottom: height * 0.4,
+        // marginBottom: height * 0.4,
     },
     signInbutton: {
         alignItems: "center",
@@ -82,7 +118,13 @@ const styles = StyleSheet.create({
         backgroundColor: "#FAF9F6",
         width: width,
         height: height,
-      },
+    },
+    input: {
+        height: 40,
+        margin: 12,
+        borderWidth: 3,
+        padding: 10,
+    },
 })
 
 export default SignIn;
