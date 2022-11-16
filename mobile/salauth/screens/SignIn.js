@@ -11,13 +11,21 @@ function SignIn({ navigation }) {
     };
     
     return (
-        <SafeAreaView>
+        <SafeAreaView style={styles.page}>
+            <Text style={styles.appName}>Salauth</Text>
             <View style={styles.parent}>
+                
+                <Pressable
+                style={styles.signInbutton}
+                onPress={() => navigation.navigate("Splash")}>
+                <Text style={styles.text2}>Back</Text>
+                </Pressable>
+
                 <Pressable
                 style={styles.signInbutton}
                 onPress={() => navigation.navigate("Home")}
                 >
-                <Text style={styles.text}>Sign In</Text>
+                <Text style={styles.text2}>Sign In</Text>
                 </Pressable>
             </View>
         </SafeAreaView>
@@ -29,11 +37,21 @@ const width = Dimensions.get('window').width
 const height = Dimensions.get('window').height
 
 const styles = StyleSheet.create({
-    text:{
+    appName: {
+        fontFamily: "Goldman_400Regular",
+        fontWeight: "bold",
+        fontSize: height * 0.07,
+        marginTop: height * 0.07,
+        textAlign: "center",
+        color: "#00539a",
+        marginHorizontal: width * 0.01,
+      },
+    text1:{
         fontSize: 40,
         fontWeight: "400",
         textAlign: "center",
-        paddingTop: 50
+        paddingTop: 5,
+        marginBottom: height * 0.4,
     },
     signInbutton: {
         alignItems: "center",
@@ -45,7 +63,7 @@ const styles = StyleSheet.create({
         height: height * 0.08,
         width: width * 0.4,
     },
-    text: {
+    text2: {
         fontFamily: "Goldman_400Regular",
         fontSize: 20,
         lineHeight: 27,
@@ -59,6 +77,11 @@ const styles = StyleSheet.create({
         justifyContent: "flex-start",
         marginTop: height * 0.19,
     },
+    page: {
+        backgroundColor: "#FAF9F6",
+        width: width,
+        height: height,
+      },
 })
 
 export default SignIn;
