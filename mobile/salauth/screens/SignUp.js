@@ -1,70 +1,75 @@
 import React from 'react';
-import { Image, Dimensions, Button, SafeAreaView, Text, StyleSheet, View, Pressable, TextInput } from 'react-native';
+import { Image, Dimensions, Button, SafeAreaView, Text, StyleSheet, View, Pressable, TextInput, KeyboardAvoidingView, ScrollView } from 'react-native';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useFonts, Goldman_400Regular, Goldman_700Bold } from '@expo-google-fonts/goldman';
 
 
-function SignIn({ navigation }) {
+function SignUp({ navigation }) {
     let fontsLoaded = async() => {
         await useFonts({Goldman_400Regular, Goldman_700Bold});
     };
     
     return (
         <SafeAreaView style={styles.page}>
-            <Text style={styles.appName}>Salauth</Text>
-            <Text style={styles.subheaderText}>Create an account</Text>
+            <KeyboardAwareScrollView>
+                <Text style={styles.appName}>Salauth</Text>
+                <Text style={styles.subheaderText}>Create an account</Text>
 
-            <TextInput
-            style={styles.input}
-            placeholder="First Name"
-            keyboardType="default"
-            />
+                <TextInput
+                style={styles.input}
+                placeholder="First Name"
+                keyboardType="default"
+                />
 
-            <TextInput
-            style={styles.input}
-            placeholder="Last Name"
-            keyboardType="default"
-            />
+                <TextInput
+                style={styles.input}
+                placeholder="Last Name"
+                keyboardType="default"
+                />
 
-            <TextInput
-            style={styles.input}
-            placeholder="Email"
-            keyboardType="email-address"
-            />
+                <TextInput
+                style={styles.input}
+                placeholder="Email"
+                keyboardType="email-address"
+                />
 
-            <TextInput
-            style={styles.input}
-            placeholder="Username"
-            keyboardType="default"
-            />
+                <TextInput
+                style={styles.input}
+                placeholder="Username"
+                keyboardType="default"
+                />
 
-            <TextInput
-            style={styles.input}
-            placeholder="Password"
-            keyboardType="visible-password"
-            />
+                <TextInput
+                style={styles.input}
+                secureTextEntry={true}
+                placeholder="Password"
+                keyboardType="visible-password"
+                />
 
-            <TextInput
-            style={styles.input}
-            placeholder="Confirm Password"
-            keyboardType="visible-password"
-            />
+                <TextInput
+                style={styles.input}
+                secureTextEntry={true}
+                placeholder="Confirm Password"
+                keyboardType="visible-password"
+                />
 
-            <View style={styles.parent}>    
-                <Pressable
-                style={styles.signInbutton}
-                onPress={() => navigation.navigate("Splash")}>
-                <Text style={styles.buttonText}>Back</Text>
-                </Pressable>
+                <View style={styles.parent}>    
+                    <Pressable
+                    style={styles.signInbutton}
+                    onPress={() => navigation.navigate("Splash")}>
+                    <Text style={styles.buttonText}>Back</Text>
+                    </Pressable>
 
-                <Pressable
-                style={styles.signInbutton}
-                onPress={() => navigation.navigate("Home")}
-                >
-                <Text style={styles.buttonText}>Sign In</Text>
-                </Pressable>
-            </View>
+                    <Pressable
+                    style={styles.signInbutton}
+                    onPress={() => navigation.navigate("Home")}
+                    >
+                    <Text style={styles.buttonText}>Sign Up</Text>
+                    </Pressable>
+                </View>
+            </KeyboardAwareScrollView>
         </SafeAreaView>
     );
 }
@@ -88,7 +93,6 @@ const styles = StyleSheet.create({
         fontWeight: "400",
         textAlign: "center",
         paddingTop: 5,
-        // marginBottom: height * 0.4,
     },
     signInbutton: {
         alignItems: "center",
@@ -127,4 +131,4 @@ const styles = StyleSheet.create({
     },
 })
 
-export default SignIn;
+export default SignUp;
