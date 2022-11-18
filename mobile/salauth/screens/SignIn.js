@@ -1,5 +1,6 @@
 import React from 'react';
-import { Image, Dimensions, Button, SafeAreaView, Text, StyleSheet, View, Pressable } from 'react-native';
+import { Image, Dimensions, Button, SafeAreaView, Text, StyleSheet, View, Pressable, TextInput } from 'react-native';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useFonts, Goldman_400Regular, Goldman_700Bold } from '@expo-google-fonts/goldman';
@@ -12,22 +13,43 @@ function SignIn({ navigation }) {
     
     return (
         <SafeAreaView style={styles.page}>
-            <Text style={styles.appName}>Salauth</Text>
-            <View style={styles.parent}>
-                
-                <Pressable
-                style={styles.signInbutton}
-                onPress={() => navigation.navigate("Splash")}>
-                <Text style={styles.text2}>Back</Text>
-                </Pressable>
+            <KeyboardAwareScrollView>
+                <Text style={styles.appName}>Salauth</Text>
+                <Text style={styles.subheaderText}>Sign in to your account</Text>
 
-                <Pressable
-                style={styles.signInbutton}
-                onPress={() => navigation.navigate("Home")}
-                >
-                <Text style={styles.text2}>Sign In</Text>
-                </Pressable>
-            </View>
+                <Image 
+                source = {require("../assets/salauth.png")}
+                style = {styles.backgroundImage}
+                />
+
+                <TextInput
+                style={styles.input}
+                placeholder="Username"
+                keyboardType="email-address"
+                />
+
+                <TextInput
+                style={styles.input}
+                secureTextEntry={true}
+                placeholder="Password"
+                keyboardType="visible-password"
+                />
+
+                <View style={styles.parent}>
+                    <Pressable
+                    style={styles.signInbutton}
+                    onPress={() => navigation.navigate("Splash")}>
+                    <Text style={styles.buttonText}>Back</Text>
+                    </Pressable>
+
+                    <Pressable
+                    style={styles.signInbutton}
+                    onPress={() => navigation.navigate("Home")}
+                    >
+                    <Text style={styles.buttonText}>Sign In</Text>
+                    </Pressable>
+                </View>
+            </KeyboardAwareScrollView>
         </SafeAreaView>
     );
 }
@@ -46,12 +68,21 @@ const styles = StyleSheet.create({
         color: "#00539a",
         marginHorizontal: width * 0.01,
       },
-    text1:{
-        fontSize: 40,
+    subheaderText: {
+        fontSize: 30,
         fontWeight: "400",
         textAlign: "center",
         paddingTop: 5,
-        marginBottom: height * 0.4,
+        marginBottom: height * 0.05,
+    },
+    backgroundImage: {
+        width: "115%",
+        height: "33%",
+        flex: 1,
+        resizeMode: "stretch",
+        position: "absolute",
+        marginTop: height * 0.45,
+        marginLeft: -width * .04,
     },
     signInbutton: {
         alignItems: "center",
@@ -63,25 +94,32 @@ const styles = StyleSheet.create({
         height: height * 0.08,
         width: width * 0.4,
     },
-    text2: {
+    buttonText: {
         fontFamily: "Goldman_400Regular",
         fontSize: 20,
         lineHeight: 27,
         fontWeight: "bold",
         letterSpacing: 0.25,
-        color: "#00539a",
+        color: "#FAF9F6",
     },
     parent: {
         flex: 1,
         flexDirection: "row",
         justifyContent: "flex-start",
         marginTop: height * 0.19,
+        paddingTop: height * 0.25
     },
     page: {
         backgroundColor: "#FAF9F6",
         width: width,
         height: height,
       },
+    input: {
+        height: 40,
+        margin: 12,
+        borderWidth: 3,
+        padding: 10,
+    },
 })
 
 export default SignIn;
