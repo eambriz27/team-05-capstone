@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
         lineHeight: 27,
         fontWeight: "bold",
         letterSpacing: 0.25,
-        color: "#00539a",
+        color: "#FAF9F6",
     },
     parent: {
         flex: 1,
