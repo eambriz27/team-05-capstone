@@ -13,7 +13,7 @@ import Settings from "./screens/Settings"
 import Partners from "./screens/Partners"
 import Home from "./screens/Home"
 import Account from "./screens/Account"
-import CameraScreen from './screens/CameraScreen';
+import CameraScreen from "./screens/CameraScreen";
 
 
 const Stack = createNativeStackNavigator();

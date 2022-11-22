@@ -1,15 +1,12 @@
 import React from 'react';
 import { Image, Dimensions, Button, SafeAreaView, Text, StyleSheet, View, TouchableOpacity, Pressable } from 'react-native';
 import { useState, useEffect, useRef } from 'react';
-import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Camera, CameraType } from 'expo-camera';
 
 function Account({ navigation }) {
-    let fontsLoaded = async() => {
-        await useFonts({Goldman_400Regular, Goldman_700Bold});
-    };
-
+    navigation = useNavigation();
     return (
         <SafeAreaView>
             <Text style={styles.comingSoon}>Your Services Coming Soon!</Text>
