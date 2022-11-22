@@ -13,6 +13,7 @@ import Settings from "./screens/Settings"
 import Partners from "./screens/Partners"
 import Home from "./screens/Home"
 import Account from "./screens/Account"
+import CameraScreen from './screens/CameraScreen';
 
 
 const Stack = createNativeStackNavigator();
@@ -44,6 +45,7 @@ export default function App() {
           <Stack.Screen name="Partners" component={Partners} options={{ headerShown: false }}/>
           <Stack.Screen name="Settings" component={Settings} options={{ headerShown: false }}/>
           <Stack.Screen name="Account" component={Account} options={{ headerShown: false }}/>
+          <Stack.Screen name="CameraScreen" component={CameraScreen} options={{ headerShown: false }}/>
         </Stack.Navigator>
       </PaperProvider>
     </NavigationContainer>
