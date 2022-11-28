@@ -12,7 +12,7 @@ function toggleCameraType() {
 function CameraScreen({ navigation }) {
     const [hasPermission, setHasPermission] = useState(null);
     const [cameraRef, setCameraRef] = useState(null)
-    const [type, setType] = useState(Camera.Constants.Type.back);
+    const [type, setType] = useState(Camera.Constants.Type.front);
   
     useEffect(() => {
       (async () => {
@@ -39,39 +39,23 @@ function CameraScreen({ navigation }) {
                     justifyContent: 'flex-end'
                 }}>
                     <TouchableOpacity
-                        style={{
-                        flex: 0.1,
-                        alignSelf: 'flex-end'
-                        }}
-                        onPress={() => {
-                        setType(
-                            type === Camera.Constants.Type.back
-                            ? Camera.Constants.Type.front
-                            : Camera.Constants.Type.back
-                        );
-                        }}>
-                        <Text style={{ fontSize: 18, marginBottom: 10, color: 'white' }}> Flip </Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        style={{
-                        flex: 0.1,
-                        alignSelf: 'flex-end'
-                        }}
+                        style={styles.backButton}
                         onPress={() => navigation.goBack()}>
-                        <Text style={{ fontSize: 18, marginBottom: 5, color: 'white' }}> Back </Text>
+                        <Text style={{ fontSize: 18, marginBottom: 0, color: 'white' }}> Back </Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={{alignSelf: 'center', marginBottom: 20}} onPress={async() => {
+                    <TouchableOpacity style={{alignSelf: 'center', marginBottom: 60}} onPress={async() => {
                         if(cameraRef){
                         let photo = await cameraRef.takePictureAsync();
                         console.log('photo', photo);
                         }
+                        navigation.goBack();
                     }}>
                         <View style={{ 
                         borderWidth: 2,
                         borderRadius:"50%",
                         borderColor: 'white',
-                        height: 50,
-                        width:50,
+                        height: 80,
+                        width:80,
                         display: 'flex',
                         justifyContent: 'center',
                         alignItems: 'center'}}
@@ -80,8 +64,8 @@ function CameraScreen({ navigation }) {
                             borderWidth: 2,
                             borderRadius:"50%",
                             borderColor: 'white',
-                            height: 40,
-                            width:40,
+                            height: 70,
+                            width:70,
                             backgroundColor: 'white'}} >
                         </View>
                         </View>
@@ -110,6 +94,18 @@ const styles = StyleSheet.create({
         marginHorizontal: width*0.2,
         opacity:0.5,
       },
+    backButton: {
+        flex: 0.1,
+        alignItems: "center",
+        alignSelf: 'flex-start',
+        justifyContent: "center",
+        backgroundColor: "#2596be",
+        marginTop: -height * .05,
+        marginHorizontal: width * 0.05,
+        borderRadius: 500,
+        height: height * 0.08,
+        width: width * 0.3, 
+    }
 })
 
 export default CameraScreen;
