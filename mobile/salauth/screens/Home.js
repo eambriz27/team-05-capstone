@@ -8,18 +8,21 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Account from "./Account"
 import Settings from "./Settings"
 import Partners from "./Partners"
+import Authenticate from './Authenticate';
 
 function Home({ navigation }) {
     const [index, setIndex] = React.useState(0);
     const [routes] = React.useState([
         { key: 'account', title: 'Your Services', focusedIcon: 'account-circle', unfocusedIcon: 'account-circle-outline'},
         { key: 'partners', title: 'Partners', focusedIcon: 'account-group', unfocusedIcon: 'account-group-outline'},
+        { key: 'authenticate', title: 'Authenticate', focusedIcon: 'face-recognition', unfocusedIcon: 'face-recognition'},
         { key: 'settings', title: 'Settings', focusedIcon: 'cog', unfocusedIcon: 'cog-outline'},
     ]);
 
     const renderScene = BottomNavigation.SceneMap({
         account: Account,
         partners: Partners,
+        authenticate: Authenticate,
         settings: Settings,
     });
 

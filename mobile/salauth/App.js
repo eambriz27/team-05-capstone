@@ -14,6 +14,8 @@ import Partners from "./screens/Partners"
 import Home from "./screens/Home"
 import Account from "./screens/Account"
 import CameraScreen from "./screens/CameraScreen";
+import NotificationSettings from './screens/NotificationSettings';
+import AccountSettings from './screens/AccountSettings';
 
 
 const Stack = createNativeStackNavigator();
@@ -46,6 +48,8 @@ export default function App() {
           <Stack.Screen name="Settings" component={Settings} options={{ headerShown: false }}/>
           <Stack.Screen name="Account" component={Account} options={{ headerShown: false }}/>
           <Stack.Screen name="CameraScreen" component={CameraScreen} options={{ headerShown: false }}/>
+          <Stack.Screen name="NotificationSettings" component={NotificationSettings} options={{ headerShown: false }}/>
+          <Stack.Screen name="AccountSettings" component={AccountSettings} options={{ headerShown: false }}/>
         </Stack.Navigator>
       </PaperProvider>
     </NavigationContainer>
