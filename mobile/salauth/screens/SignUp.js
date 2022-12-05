@@ -92,15 +92,15 @@ const styles = StyleSheet.create({
         
         fontWeight: "bold",
         fontSize: height * 0.07,
-        marginTop: height * 0.07,
         textAlign: "center",
         color: "#00539a",
         marginHorizontal: width * 0.01,
       },
     subheaderText:{
-        fontSize: 40,
+        fontSize: 35,
         fontWeight: "400",
         textAlign: "center",
+        color: "#00539a",
         paddingTop: 5,
     },
     scanButton: {
@@ -145,8 +145,15 @@ const styles = StyleSheet.create({
     input: {
         height: 40,
         margin: 12,
-        borderWidth: 3,
+        borderWidth: 1,
+        alignSelf: 'center',
         padding: 10,
+        width: width * .75,
+        borderTopColor:"#FAF9F6",
+        borderRightColor:"#FAF9F6",
+        borderLeftColor:"#FAF9F6",
+        borderBottomColor:"#00539a",
+        backgroundColor: '#F1F1F1'
     },
 })
 

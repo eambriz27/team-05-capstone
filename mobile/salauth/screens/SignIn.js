@@ -20,12 +20,20 @@ function SignIn({ navigation }) {
                 <TextInput
                 style={styles.input}
                 placeholder="Username"
+                borderTopColor="#FAF9F6"
+                borderRightColor="#FAF9F6"
+                borderLeftColor="#FAF9F6"
+                borderBottomColor="#00539a"
                 keyboardType="email-address"
                 />
 
                 <TextInput
                 style={styles.input}
                 secureTextEntry={true}
+                borderTopColor="#FAF9F6"
+                borderRightColor="#FAF9F6"
+                borderLeftColor="#FAF9F6"
+                borderBottomColor="#00539a"
                 placeholder="Password"
                 keyboardType="visible-password"
                 />
@@ -72,7 +80,6 @@ const styles = StyleSheet.create({
         
         fontWeight: "bold",
         fontSize: height * 0.07,
-        marginTop: height * 0.07,
         textAlign: "center",
         color: "#00539a",
         marginHorizontal: width * 0.01,
@@ -81,6 +88,7 @@ const styles = StyleSheet.create({
         fontSize: 30,
         fontWeight: "400",
         textAlign: "center",
+        color: "#00539a",
         paddingTop: 5,
         marginBottom: height * 0.05,
     },
@@ -90,7 +98,7 @@ const styles = StyleSheet.create({
         flex: 1,
         resizeMode: "cover",
         position: "absolute",
-        marginTop: height * 0.45,
+        marginTop: height * 0.35,
         marginLeft: -width * .04,
     },
     scanButton: {
@@ -135,8 +143,11 @@ const styles = StyleSheet.create({
     input: {
         height: 40,
         margin: 12,
-        borderWidth: 3,
+        borderWidth: 1,
+        alignSelf: 'center',
         padding: 10,
+        width: width * .75,
+        backgroundColor: '#F1F1F1'
     },
 })
 
