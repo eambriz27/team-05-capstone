@@ -7,6 +7,7 @@ function Partners({ navigation }) {
     return (
         <SafeAreaView>
             <Text style={styles.title}>Our Partners</Text>
+            <Text style ={styles.text}>Check Back Soon For Our Partners!</Text>
         </SafeAreaView>
     );
 }
@@ -16,6 +17,14 @@ const width = Dimensions.get('window').width
 const height = Dimensions.get('window').height
 
 const styles = StyleSheet.create({
+    text:{
+        fontSize: 25,
+        fontWeight: '400',
+        color: "#00539a",
+        textAlign:'center',
+        paddingBottom: 30,
+        paddingTop: 30,
+    },
     title:{
         fontSize: 35,
         fontWeight: '400',

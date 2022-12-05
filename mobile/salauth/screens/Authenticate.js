@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
         width: width * 0.4,
     },
     buttonText: {
-        fontFamily: "Goldman_400Regular",
+        
         fontSize: 20,
         lineHeight: 27,
         fontWeight: "bold",

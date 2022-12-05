@@ -10,6 +10,8 @@ function Account({ navigation }) {
     return (
         <SafeAreaView>
             <Text style={styles.title}>Your Services</Text>
+            <Text style ={styles.text}>You Are Not Yet Signed Up With Any Partners.</Text>
+            <Text style ={styles.text}>Check Out the Partners Page to Discover Supported Services!</Text>
             <View style={styles.parent}>    
             </View>
         </SafeAreaView>
@@ -21,6 +23,20 @@ const width = Dimensions.get('window').width
 const height = Dimensions.get('window').height
 
 const styles = StyleSheet.create({
+    text2:{
+        fontSize: 25,
+        fontWeight: '400',
+        color: "#00539a",
+        textAlign:'center',
+    },
+    text:{
+        fontSize: 25,
+        fontWeight: '400',
+        color: "#00539a",
+        textAlign:'center',
+        paddingBottom: 30,
+        paddingTop: 30,
+    },
     title:{
         fontSize: 35,
         fontWeight: '400',

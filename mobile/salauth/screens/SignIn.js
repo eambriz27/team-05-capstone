@@ -60,7 +60,7 @@ const height = Dimensions.get('window').height
 
 const styles = StyleSheet.create({
     appName: {
-        fontFamily: "Goldman_400Regular",
+        
         fontWeight: "bold",
         fontSize: height * 0.07,
         marginTop: height * 0.07,
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
         width: width * 0.4,
     },
     buttonText: {
-        fontFamily: "Goldman_400Regular",
+        
         fontSize: 20,
         lineHeight: 27,
         fontWeight: "bold",

@@ -43,7 +43,7 @@ const height = Dimensions.get("window").height;
 
 const styles = StyleSheet.create({
   appName: {
-    fontFamily: "Goldman_400Regular",
+    
     fontWeight: "bold",
     fontSize: height * 0.07,
     marginBottom: height * 0.43,
