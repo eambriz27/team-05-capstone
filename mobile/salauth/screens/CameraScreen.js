@@ -47,8 +47,10 @@ function CameraScreen({ navigation }) {
                         if(cameraRef){
                         let photo = await cameraRef.takePictureAsync();
                         console.log('photo', photo);
+                        navigation.navigate("DisplayPicture",{photoRef: photo.uri});
+                        console.log('photo2', photo.uri);
                         }
-                        navigation.goBack();
+                        
                     }}>
                         <View style={{ 
                         borderWidth: 2,

@@ -6,62 +6,28 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useFonts, Goldman_400Regular, Goldman_700Bold } from '@expo-google-fonts/goldman';
 
 
-function SignUp({ navigation }) {
+function DisplayPicture({ navigation, route }) {
     let fontsLoaded = async() => {
         await useFonts({Goldman_400Regular, Goldman_700Bold});
     };
+
+    photo = route.params;
+    console.log("PASSED PARAM", photo);
     
     return (
         <SafeAreaView style={styles.page}>
             <KeyboardAwareScrollView>
-                <Text style={styles.appName}>Salauth</Text>
-                <Text style={styles.subheaderText}>Create an account</Text>
+                <Text style={styles.appName}>la tuya</Text>
+                <Text style={styles.subheaderText}>Fuck ya motha</Text>
 
-                <TextInput
-                style={styles.input}
-                placeholder="First Name"
-                keyboardType="default"
-                />
-
-                <TextInput
-                style={styles.input}
-                placeholder="Last Name"
-                keyboardType="default"
-                />
-
-                <TextInput
-                style={styles.input}
-                placeholder="Email"
-                keyboardType="email-address"
-                />
-
-                <TextInput
-                style={styles.input}
-                placeholder="Username"
-                keyboardType="default"
-                />
-
-                <TextInput
-                style={styles.input}
-                secureTextEntry={true}
-                placeholder="Password"
-                keyboardType="visible-password"
-                />
-
-                <TextInput
-                style={styles.input}
-                secureTextEntry={true}
-                placeholder="Confirm Password"
-                keyboardType="visible-password"
-                />
 
                 <View style={styles.parent}>    
                     <Pressable
                     style={styles.signInbutton}
-                    onPress={() => navigation.navigate("Splash")}>
+                    onPress={() => navigation.goBack()}>
                     <Text style={styles.buttonText}>Back</Text>
                     </Pressable>
-
+                    <Image style={styles.backgroundImage} source={photo}/>
                     <Pressable
                     style={styles.signInbutton}
                     onPress={() => navigation.navigate("CameraScreen")}
@@ -74,7 +40,7 @@ function SignUp({ navigation }) {
     );
 }
 
-
+photo = null;
 const width = Dimensions.get('window').width
 const height = Dimensions.get('window').height
 
@@ -129,6 +95,15 @@ const styles = StyleSheet.create({
         borderWidth: 3,
         padding: 10,
     },
+    backgroundImage: {
+        width: "110%",
+        height: "1000%",
+        flex: 1,
+        resizeMode: "stretch",
+        position: "absolute",
+        marginTop: height * 0.15,
+        marginLeft: -width * .04,
+    },
 })
 
-export default SignUp;
+export default DisplayPicture;
