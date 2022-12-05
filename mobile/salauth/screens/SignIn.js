@@ -17,11 +17,6 @@ function SignIn({ navigation }) {
                 <Text style={styles.appName}>Salauth</Text>
                 <Text style={styles.subheaderText}>Sign in to your account</Text>
 
-                <Image 
-                source = {require("../assets/salauth.png")}
-                style = {styles.backgroundImage}
-                />
-
                 <TextInput
                 style={styles.input}
                 placeholder="Username"
@@ -34,6 +29,20 @@ function SignIn({ navigation }) {
                 placeholder="Password"
                 keyboardType="visible-password"
                 />
+
+                <Image 
+                source = {require("../assets/salauth.png")}
+                style = {styles.backgroundImage}
+                />
+
+                <View style={styles.parent}>   
+
+                    <Pressable
+                        style={styles.scanButton}
+                        onPress={() => navigation.navigate("CameraScreen")}>
+                        <Text style={styles.buttonText}>Face Scan</Text>
+                    </Pressable>
+                </View>
 
                 <View style={styles.parent}>
                     <Pressable
@@ -79,16 +88,26 @@ const styles = StyleSheet.create({
         width: "115%",
         height: "33%",
         flex: 1,
-        resizeMode: "stretch",
+        resizeMode: "cover",
         position: "absolute",
         marginTop: height * 0.45,
         marginLeft: -width * .04,
+    },
+    scanButton: {
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: "#2596be",
+        marginTop: height * .21,
+        marginHorizontal: width * 0.3,
+        borderRadius: 500,
+        height: height * 0.08,
+        width: width * 0.4,
     },
     signInbutton: {
         alignItems: "center",
         justifyContent: "center",
         backgroundColor: "#2596be",
-        marginTop: -height * .05,
+        marginTop: -height * .13,
         marginHorizontal: width * 0.05,
         borderRadius: 500,
         height: height * 0.08,
@@ -106,8 +125,7 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: "row",
         justifyContent: "flex-start",
-        marginTop: height * 0.19,
-        paddingTop: height * 0.25
+        marginTop: height * 0.15
     },
     page: {
         backgroundColor: "#FAF9F6",
