@@ -1,17 +1,19 @@
-import React from 'react';
-import { Image, Dimensions, Button, SafeAreaView, Text, StyleSheet, View, TouchableOpacity, Pressable } from 'react-native';
-import { useState, useEffect, useRef } from 'react';
+import {React} from 'react';
+import { Image, Dimensions, Button, SafeAreaView, Text, StyleSheet, Pressable} from 'react-native';
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Camera, CameraType } from 'expo-camera';
 
-function Account({ navigation }) {
+function Authenticate({ navigation }) {
     navigation = useNavigation();
     return (
         <SafeAreaView>
-            <Text style={styles.title}>Your Services</Text>
-            <View style={styles.parent}>    
-            </View>
+            <Text style={styles.title}>Mobile Authentication</Text>
+            <Text style ={styles.text}>Open the Camera to Authenticate Yourself on Web</Text>
+            <Pressable
+                style={styles.signInbutton}
+                onPress={() => navigation.navigate("CameraScreen")}>
+                <Text style={styles.buttonText}>Open Camera</Text>
+            </Pressable>
         </SafeAreaView>
     );
 }
@@ -21,6 +23,14 @@ const width = Dimensions.get('window').width
 const height = Dimensions.get('window').height
 
 const styles = StyleSheet.create({
+    text:{
+        fontSize: 25,
+        fontWeight: '400',
+        color: "#00539a",
+        textAlign:'center',
+        paddingBottom: 30,
+        paddingTop: 30,
+    },
     title:{
         fontSize: 35,
         fontWeight: '400',
@@ -29,19 +39,12 @@ const styles = StyleSheet.create({
         paddingBottom: 30,
         paddingTop: 30,
     },
-    backImage: {
-        width: '60%', 
-        height: '50%',
-        marginVertical: height*0.09,
-        marginHorizontal: width*0.2,
-        opacity:0.5,
-    },
     signInbutton: {
         alignItems: "center",
         justifyContent: "center",
         backgroundColor: "#2596be",
-        marginTop: height * .05,
-        marginHorizontal: width * 0.05,
+        marginTop: height * .5,
+        marginHorizontal: width * 0.3,
         borderRadius: 500,
         height: height * 0.08,
         width: width * 0.4,
@@ -56,4 +59,4 @@ const styles = StyleSheet.create({
     },
 })
 
-export default Account;
+export default Authenticate;

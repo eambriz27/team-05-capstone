@@ -55,18 +55,27 @@ function SignUp({ navigation }) {
                 keyboardType="visible-password"
                 />
 
-                <View style={styles.parent}>    
-                    <Pressable
-                    style={styles.signInbutton}
-                    onPress={() => navigation.navigate("Splash")}>
-                    <Text style={styles.buttonText}>Back</Text>
-                    </Pressable>
+                <View style={styles.parent}>   
 
                     <Pressable
-                    style={styles.signInbutton}
-                    onPress={() => navigation.navigate("CameraScreen")}
-                    >
-                    <Text style={styles.buttonText}>Next Step</Text>
+                        style={styles.scanButton}
+                        onPress={() => navigation.navigate("CameraScreen")}>
+                        <Text style={styles.buttonText}>Face Scan</Text>
+                    </Pressable>
+                </View>
+
+                <View style={styles.parent}>
+                    <Pressable
+                        style={styles.signInbutton}
+                        onPress={() => navigation.navigate("Splash")}>
+                        <Text style={styles.buttonText}>Back</Text>
+                        </Pressable>
+
+                        <Pressable
+                        style={styles.signInbutton}
+                        onPress={() => navigation.navigate("Home")}
+                        >
+                        <Text style={styles.buttonText}>Sign Up</Text>
                     </Pressable>
                 </View>
             </KeyboardAwareScrollView>
@@ -94,11 +103,21 @@ const styles = StyleSheet.create({
         textAlign: "center",
         paddingTop: 5,
     },
+    scanButton: {
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: "#2596be",
+        marginTop: -height * .16,
+        marginHorizontal: width * 0.3,
+        borderRadius: 500,
+        height: height * 0.08,
+        width: width * 0.4,
+    },
     signInbutton: {
         alignItems: "center",
         justifyContent: "center",
         backgroundColor: "#2596be",
-        marginTop: -height * .05,
+        marginTop: -height * .2,
         marginHorizontal: width * 0.05,
         borderRadius: 500,
         height: height * 0.08,

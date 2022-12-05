@@ -6,7 +6,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 function Partners({ navigation }) {
     return (
         <SafeAreaView>
-            <Text style={styles.comingSoon}>Partners Coming Soon!</Text>
+            <Text style={styles.title}>Our Partners</Text>
         </SafeAreaView>
     );
 }
@@ -16,11 +16,13 @@ const width = Dimensions.get('window').width
 const height = Dimensions.get('window').height
 
 const styles = StyleSheet.create({
-    comingSoon:{
-        fontSize: 40,
-        fontWeight: "400",
-        textAlign: "center",
-        paddingTop: 50
+    title:{
+        fontSize: 35,
+        fontWeight: '400',
+        color: "#00539a",
+        textAlign:'center',
+        paddingBottom: 30,
+        paddingTop: 30,
     },
     backImage: {
         width: '60%', 
